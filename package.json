@@ -1,0 +1,26 @@
+{
+  "name": "vacationstation",
+  "version": "1.0.0",
+  "description": "Ski Condo Rental Application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corey-Vaughan/group2-project2.git"
+  },
+  "author": "Corey Vaughan, Peter Norman, John Rodriguez, Nicole Clements",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Corey-Vaughan/group2-project2/issues"
+  },
+  "homepage": "https://github.com/Corey-Vaughan/group2-project2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0"
+  }
+}
