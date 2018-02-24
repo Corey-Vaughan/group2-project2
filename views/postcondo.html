@@ -1,27 +1,33 @@
 <html>
   <body>
 
-    <h1>Edit your account</h1>
+    <h1>Add your property</h1>
 
     <hr>
 
-    <h2>Your Condo</h2>
+    <h2>Your Property:</h2>
 
+    
+    <p id="status">Please upload a picture of your property:</p>
     <input type="file" id="file-input">
-    <p id="status">Please upload a picture of your condo:</p>
+    <br>
     <img style="border:1px solid gray;width:300px;"  id="preview" src="/images/cabin.jpg">
 
-    <h2>Your information</h2>
+    <h2>Property information</h2>
 
     <form method="POST" action="/save-details">
       <input type="hidden" id="picture-url" name="picture-url" value="/images/cabin.jpg">
-      <input type="text" name="username" placeholder="Username"><br>
-      <input type="text" name="full-name" placeholder="Full name"><br><br>
+      <input type="text" name="condoname" placeholder="CondoName" required><br>
+      <input type="text" name="condozip" placeholder="ZipCode-Location" required><br>
+      <input type="text" name="condorate" placeholder="DailyRate:$150" required><br>
+      Are Pets Allowed?:  <input type="radio" name="pets" value="petsyes" checked> Yes
+  <input type="radio" name="pets" value="petsno"> No<br>
+      How many guests can this location accomodate?:<br><input type="number" name="condoguests" placeholder="0" required><br><br>
+      Please describe your property:<br>
+      <textarea rows="4" cols="50" name="description" required>
+      </textarea><br>
 
-      <hr>
-      <h2>Save changes</h2>
-
-      <input type="submit" value="Update profile">
+      <input type="submit" value="Add Property">
     </form>
 
    
