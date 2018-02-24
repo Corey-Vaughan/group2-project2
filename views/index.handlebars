@@ -1,0 +1,51 @@
+<div>
+<img src="/images/burger.jpg" alt="fat burger" class="logo">
+</div>
+
+<div class="header">
+  <h1>Eat-Da-Burger!</h1>
+</div>
+
+<!-- Pass in data from server.js -->
+<div class = "theBurgers">
+  <h2>Burger List:</h2>
+  <div class = "newBurgers">
+    <p>New Burgers:</p>
+    {{#each burgers}}
+      {{#unless devoured}}
+        <div class = "aBurger">
+          <div class="aName">
+            {{this.id}}-{{this.burger_name}}
+          </div>
+          <div class = "aButton">
+            <button data-id="{{this.id}}" class="devBurger">Devour</button>
+          </div>
+        </div>
+      {{/unless}}
+    {{/each}}
+  </div>
+  <div class = "eatenBurgers">
+    <p>Eaten Burgers:</p>
+    {{#each burgers}}
+      {{#if devoured}}
+        <div class = "aBurger">
+          <div class="aName">
+            {{this.id}}-{{this.burger_name}}
+          </div>
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
+</div>
+<div class = "makeBurger">
+  <h2>Create A Burger</h2>
+
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="bNameID">Burger Name:</label>
+      <input type="text" id="bNameID" name="bName">
+    </div>
+    <button id="addBurgerButton" type="submit">Add Burger</button>
+  </form>
+</div>
