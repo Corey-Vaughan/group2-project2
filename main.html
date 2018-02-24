@@ -39,8 +39,30 @@
 			<img src="./assets/images/mountain.jpeg" class="img-responsive" id="mountain-image" alt="mountain">
 
 		<!-- need fancy typography -->
-			<h1>Vacation/Station</h1>
-			<h3 class="pull-right">Your stop for finding the vacation rental of your dreams.</h3>
+			<h1 id="heading1">Vacation/Station</h1>
+			<h3 class="pull-right" id="heading2">Your stop for finding the vacation rental of your dreams.</h3>
+
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="text" class="form-control" id="destination" placeholder="Where Would You Like To Go?">
+				</div>
+
+			<!-- implement drop-down calendar for next two sections -->	
+				<div class="form-group">
+					<input type="date" class="form-control" id="start-date" placeholder="Check In">
+				</div>
+				<div class="form-group">
+					<input type="date" class="form-control" id="end-date" placeholder="Check Out">
+				</div>
+			<!-- end calendar implementation -->
+
+			<!-- dropdown with party sizes -->
+				<div class="form-group">
+					<input type="text" class="form-control" id="party" placeholder="Number of Guests">
+				</div>
+				<button type="submit" class="btn btn-default">Find Your Condo</button>
+			</form>
+
 		
 		</div>
 
