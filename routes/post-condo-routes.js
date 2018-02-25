@@ -1,5 +1,6 @@
 var db = require("../models");
 const aws = require('aws-sdk');
+var path = require("path");
 const S3_BUCKET = process.env.S3_BUCKET;
 
 module.exports = function(app) 
@@ -34,9 +35,12 @@ module.exports = function(app)
   });
 
   app.post('/save-details', (req, res) => 
-  {
+  { 
+      var object = {};
+      object =  req.body;
+      object.UserId = "1";
+      console.log(object);
       // TODO: Read POSTed form data and do something useful
-      db.Condo.create(req.body).then(res.render('account.html'));
-
+      db.Condo.create(object).then(res.sendFile(path.join(__dirname, "../public/postcondo.html")));
   });
 };

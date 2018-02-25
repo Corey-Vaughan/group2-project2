@@ -42,12 +42,12 @@
 
     <form method="POST" action="/save-details">
       <input type="hidden" id="picture-url" name="picture-url" value="/images/cabin.jpg">
-      <input type="text" name="condoname" placeholder="CondoName" required><br>
-      <input type="text" name="condozip" placeholder="ZipCode-Location" required><br>
-      <input type="text" name="condorate" placeholder="DailyRate:$150" required><br>
-      Are Pets Allowed?:  <input type="radio" name="pets" value="petsyes" checked> Yes
-  <input type="radio" name="pets" value="petsno"> No<br>
-      How many guests can this location accomodate?:<br><input type="number" name="condoguests" placeholder="0" required><br><br>
+      <input type="text" name="name" placeholder="CondoName" required><br>
+      <input type="text" name="location" placeholder="ZipCode-Location" required><br>
+      <input type="text" name="price" placeholder="DailyRate:$150" required><br>
+      Are Pets Allowed?:  <input type="radio" name="pets" value="true" checked> Yes
+  <input type="radio" name="pets" value="false"> No<br>
+      How many guests can this location accomodate?:<br><input type="number" name="guests" placeholder="0" required><br><br>
       Please describe your property:<br>
       <textarea rows="4" cols="50" name="description" required>
       </textarea><br>
