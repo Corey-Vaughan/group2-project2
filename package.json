@@ -2,9 +2,9 @@
   "name": "group2-project2",
   "version": "1.0.0",
   "description": "Condo rental application.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,7 @@
     "express": "^4.16.2",
     "method-override": "^2.3.10",
     "multer": "^1.3.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "sequelize": "^4.33.4"
   }
 }
