@@ -10,17 +10,30 @@
 	margin: 20px 0;
 }
 
+.container-fluid {
+    background-color: white;
+}
+
 form {
 	background-color: #4B90D5;
 }
 
-.container {
+#search-form {
     text-align: center;
+    margin-top: 5em;
 }
 
 #input-col {
     margin-left: 1em;
     margin-top: 1em;
+}
+
+#registration-form, #photo-block, #info-block {
+    margin: 5em auto;
+}
+
+#photo-output-block {
+    margin: 2em 0;
 }
 
 
