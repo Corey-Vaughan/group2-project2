@@ -14,13 +14,10 @@
     background-color: white;
 }
 
-form {
-	background-color: #4B90D5;
-}
-
 #search-form {
     text-align: center;
     margin-top: 5em;
+    background-color: #4B90D5;
 }
 
 #input-col {
