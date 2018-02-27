@@ -9,6 +9,6 @@ module.exports = function(app)
       object =  req.body;
       console.log(object);
       // TODO: Read POSTed form data and do something useful
-      db.User.create(object).then(res.sendFile(path.join(__dirname, "../public/index.html")));
+      db.User.create(object).then(res.sendFile(path.join(__dirname, "../public/frontpage.html")));
   });
 };

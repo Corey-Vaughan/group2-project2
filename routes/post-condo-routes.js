@@ -41,6 +41,6 @@ module.exports = function(app)
       object.UserId = "1";
       console.log(object);
       // TODO: Read POSTed form data and do something useful
-      db.Condo.create(object).then(res.sendFile(path.join(__dirname, "../public/postcondo.html")));
+      db.Condo.create(object).then(res.sendFile(path.join(__dirname, "../public/register.html")));
   });
 };
