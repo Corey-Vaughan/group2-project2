@@ -56,38 +56,24 @@
 		</div>
 	
 			<div class="container">
-				<h3>Find Your Dream Condo</h3>
-				<hr>
-
-				<div id="search-form">
-					<form>
-						<div class="row" id="input-row">
-							<div class="col" id="input-col">
-								<input type="text" class="form-control" id="location" name="location" placeholder="Dream Zipcode">
-							</div>
-							<div class="col" id="input-col">
-							<input type="date" class="form-control" id="start-date" placeholder="Check In">
+				<div id="signup-form">
+					<h3>Create Your Account</h3>
+					<hr>
+					<form method="POST" action="/save-account">
+						<div class="form-group row">
+							<label for="name" class="col-lg-2 col-form-label">Username:</label>
+							<input type="text" name="name" class="form-control" id="name" placeholder="Mountain Hopper" required>
 						</div>
-						<div class="col" id="input-col">
-							<input type="date" class="form-control" id="end-date" placeholder="Check Out">
+						<div class="form-group row">
+							<label for="email" class="col-lg-2 col-form-label">Email:</label>
+							<input type="text" name="email" class="form-control" id="email" placeholder="you@email.com" required>
 						</div>
-						<div class="col" id="input-col">
-							<div class="form-group">
-								<select class="form-control" id="guests">
-									<option hidden>Number Of Guests</option>
-									<option>1+</option>
-									<option>2+</option>
-									<option>3+</option>
-									<option>4+</option>
-									<option>5+</option>
-								</select>
-							</div>
+				<!-- possible passwordless authentication here -->
+						<div class="form-group row">
+							<input type="submit" value="Create Account">
 						</div>
-						<div class="col" id="input-col">
-							<button type="submit" class="btn btn-default" id="form-submit">Find Your Condo</button>
-						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		
 
