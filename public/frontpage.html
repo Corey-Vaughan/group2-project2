@@ -28,7 +28,7 @@
 							<a class="nav-link" href="/account">Log In</a>
 						</li>
 						<li class="nav-item" id="nav-li">
-							<a class="nav-link" href="/search">Search</a>
+							<a class="nav-link" href="/account/create">Create Account</a>
 						</li>
 					</ul>
 				</div>
@@ -55,26 +55,28 @@
 			</div>
 		</div>
 	
-			<div class="container">
+			<div class="container" id="search-form">
 				<h3>Find Your Dream Condo</h3>
 				<hr>
 
-				<div id="search-form">
-					<form>
-						<div class="row" id="input-row">
-							<div class="col" id="input-col">
-								<input type="text" class="form-control" id="location" name="location" placeholder="Dream Zipcode">
+					<form class="search-details">
+						<div class="form-group row">
+							<label for="location" class="col-lg-2 col-form-label">Dream Zip Code:</label>
+							<div class="col-lg-10">
+								<input type="text" name="location" class="form-control" id="location" placeholder="12345" required>
 							</div>
-							<div class="col" id="input-col">
-							<input type="date" class="form-control" id="start-date" placeholder="Check In">
 						</div>
-						<div class="col" id="input-col">
-							<input type="date" class="form-control" id="end-date" placeholder="Check Out">
+						<div class="form-group row">
+							<label for="price" class="col-lg-2 col-form-label">Preferred Daily Rate:</label>
+							<div class="col-lg-10">
+								<input type="text" name="price" class="form-control" id="price" placeholder="$000.00" required>
+							</div>
 						</div>
-						<div class="col" id="input-col">
-							<div class="form-group">
-								<select class="form-control" id="guests">
-									<option hidden>Number Of Guests</option>
+						<div class="form-group row">
+							<label for="guests" class="col-lg-5 col-form-label">Total Number Of Guests:</label>
+							<div class="col-lg-7">
+								<select class="form-control" name="guests" id="guests">
+									<option hidden>Choose a Range</option>
 									<option>1+</option>
 									<option>2+</option>
 									<option>3+</option>
@@ -83,11 +85,27 @@
 								</select>
 							</div>
 						</div>
-						<div class="col" id="input-col">
-							<button type="submit" class="btn btn-default" id="form-submit">Find Your Condo</button>
+						<div class="form-group row">
+							<label for="pets" class="col-lg-2 col-form-label">Pet-Friendly?</label>
+								<div class="col-lg-5">
+									<input type="radio" name="pets" id="pets" value="true" checked>Yes
+								</div>
+								<div class="col-lg-5">
+									<input type="radio" name="pets" id="pets" value="false">No
+								</div>
 						</div>
-					</div>
-				</form>
+						<div class="form-group row">
+							<label for="dates" class="col-lg-2 col-form-label">Vacation Dates:</label>
+								<div class="col-lg-5">
+									<input type="date" name="start-date" id="dates">
+								</div>
+								<div class="col-lg-5">
+									<input type="date" name="end-date" id="dates">
+								</div>
+						</div>
+						<input type="submit" value="Find Your Dream Condo!">
+					</form>
+
 			</div>
 		
 

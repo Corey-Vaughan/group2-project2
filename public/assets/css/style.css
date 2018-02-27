@@ -14,7 +14,7 @@
     background-color: white;
 }
 
-#search-form {
+#input-form {
     text-align: center;
     margin-top: 5em;
     background-color: #4B90D5;
@@ -25,7 +25,7 @@
     margin-top: 1em;
 }
 
-#registration-form, #photo-block, #info-block {
+#registration-form, #search-form, #signup-form, #photo-block, #info-block {
     margin: 5em auto;
 }
 
