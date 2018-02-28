@@ -21,19 +21,43 @@ $(document).ready(function()
       }
     );*/
   });
-
+ function createResultRow(result) {
+    var $newInputRow = $(
+      [
+        "<li class='list-group-item result-item'>",
+        "<span>",
+        result.location,
+        result.price,
+        result.pets,
+        result.guests,
+        result.description
+        "</span>",
+        "<input type='text' class='edit' style='display: none;'>",
+        "<button class='delete btn btn-default'>x</button>",
+        "<button class='complete btn btn-default'>✓</button>",
+        "</li>"
+      ].join("")
+    );
 
 // Function for retrieving results and getting them ready to be rendered to the page
-  function getCondos() {
-    $.get("/api/authors", function(data) {
+  function getResults(search) {
+    $.get("/api/search" + search, function(data) {
       var rowsToAdd = [];
-      for (var i = 0; i < data.length; i++) {
-        rowsToAdd.push(createAuthorRow(data[i]));
+      for (var i = 0; i < data.length; i++) 
+      {
+        rowsToAdd.push(createResultRow(data[i]));
       }
-      renderAuthorList(rowsToAdd);
-      nameInput.val("");
+      $(".container").append(rowsToAdd);
     });
   }
+/*
+
+   //Send the POST request.
+   $.get("/api/search", {
+      type: "GET",
+      data: newSearch
+    }).then(getCondos();
+  });*/
 
 
   $(".search-details").on("submit", function(event) {
@@ -46,11 +70,6 @@ $(document).ready(function()
       pets: $("#pets").val().trim(),
       guests: $("#guests").val().trim()
     };
-    //Send the POST request.
-   $.post("/api/search", 
-    {
-      type: "POST",
-      data: newSearch
-    }).then(getCondos();
+    getResults(newSearch);
   });
 });
