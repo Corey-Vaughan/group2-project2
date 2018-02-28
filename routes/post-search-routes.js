@@ -3,22 +3,46 @@ var path = require("path");
 
 module.exports = function(app) 
 {
-  	app.get('/api/search:object', (req, res) => 
-  	{	 
-  		console.log(req.params.object);
-      	db.Condo.findAll(
-      	{
-  			where: 
-  			{
-	    		location: req.params.object.location,
-	    		price: {$lte: req.params.object.price},
-	    		pets:{$lte: req.params.object.pets},
-	    		guests:{$lte: req.params.object.guests}
-	    	}
+  app.post('/api/search', (req, res) => 
+	{	 
+    //console.log(req);
+		var object = {};
+    object =  req.body;
+    //console.log(object)
+    db.Condo.findAll(
+    {
+			where: 
+			{
+    		location: object.location,
+    		price: {$lte: parseInt(object.price)},
+    		pets:1,
+    		guests:{$gte: parseInt(object.guests)}
+    	}
 
-		}).then(function(data) 
-		{
-       	 	return res.json(data);
-  		});
+	   }).then(function(data) 
+	 {
+        //console.log(data);
+    res.json(data);
+	 });
 	});
+
+  app.post('/api/searchpic', (req, res) => 
+    {  
+      //console.log(req);
+      var object = {};
+      object =  req.body;
+      //console.log(object)
+      db.Picture.findAll(
+      {
+        where: 
+        {
+          CondoId: parseInt(object.id)
+        }
+
+    }).then(function(data) 
+    {
+      console.log(data);
+      res.json(data);
+    });
+  });
 };
