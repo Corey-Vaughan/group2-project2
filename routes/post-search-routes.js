@@ -3,13 +3,22 @@ var path = require("path");
 
 module.exports = function(app) 
 {
-  app.post('/api/search', (req, res) => 
-  { 
-      var object = {};
-      object =  req.body;
-      object.UserId = "1";
-      console.log(object);
-      // TODO: Read POSTed form data and do something useful
-      db.Condo.create(object).then(res.sendFile(path.join(__dirname, "../public/frontpage.html")));
-  });
+  	app.get('/api/search:object', (req, res) => 
+  	{	 
+  		console.log(req.params.object);
+      	db.Condo.findAll(
+      	{
+  			where: 
+  			{
+	    		location: req.params.object.location,
+	    		price: {$lte: req.params.object.price},
+	    		pets:{$lte: req.params.object.pets},
+	    		guests:{$lte: req.params.object.guests}
+	    	}
+
+		}).then(function(data) 
+		{
+       	 	return res.json(data);
+  		});
+	});
 };
