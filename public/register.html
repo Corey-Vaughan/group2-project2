@@ -132,32 +132,28 @@
 						<div class="modal-header">
 							<h5 class="modal-title">Log In To Vacation/Station</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidde="true">&times</span>
+								<span aria-hidden="true" id="modal-cancel">&times</span>
 							</button>
 						</div>
 						<div class="modal-body">
 							<form>
 								<div class="form-group row">
-									<label for="name-input" class="col-lg-2 col-form-label">Name:</label>
+									<label for="name-input" class="col-lg-2 col-form-label" id="modal-label">Name:</label>
 									<div class="col-lg-10">
 										<input type="text" name="name-input" class="form-control" id="name-input" placeholder="User Name" required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label for="email-input" class="col-lg-2 col-form-label">Email:</label>
+									<label for="email-input" class="col-lg-2 col-form-label" id="modal-label">Email:</label>
 									<div class="col-lg-10">
 										<input type="email" name="email-input" class="form-control" id="email-input" placeholder="user@email.com" required>
 									</div>
 								</div>
-								<div class="form-group row">
-									<div class="col-lg-6">
-										<input type="submit" value="Log In">
-									</div>
-									<div class="col-lg-6">
-										<input type="cancel" value="Cancel">
-									</div>
-								</div>
 							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" id="login-submit">Submit</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal" id="login-cancel">Close</button>
 						</div>
 					</div>
 				</div>

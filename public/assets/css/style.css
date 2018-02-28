@@ -32,3 +32,18 @@
 #photo-output-block {
     margin: 2em 0;
 }
+
+.modal-content {
+    background-image: url('../images/ski.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.modal-body {
+    background: rgba(0, 0, 0, .5);
+}
+
+.modal-title, #modal-cancel, #modal-label {
+    color: white;
+    text-shadow: 2px 2px 8px #000000;
+}
