@@ -77,7 +77,7 @@ $(document).ready(function()
           "</li><br>"
         ].join(" ")
         );
-      $newInputRow.find("button.bookit").data("id", myResult.id);
+      $newInputRow.find("button.bookit").data("id", myResult.id,"name");
       appendResultRow($newInputRow);
     });
   }
