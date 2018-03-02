@@ -41,6 +41,18 @@ module.exports = function(app)
       object.UserId = "1";
       console.log(object);
       // TODO: Read POSTed form data and do something useful
-      db.Condo.create(object).then(res.sendFile(path.join(__dirname, "../public/register.html")));
-  });
+      db.Condo.create(object).then(function(data) 
+      {
+        var theId = data;
+        //console.log(theId);
+        console.log(theId.dataValues.id);
+        console.log(object.pictureurl);
+        var newPicture= {};
+        newPicture.CondoId = theId.dataValues.id;
+        newPicture.name = object.pictureurl;
+        console.log(newPicture);
+        db.Picture.create(newPicture);
+        res.sendFile(path.join(__dirname, "../public/register.html"));
+      });
+    });
 };

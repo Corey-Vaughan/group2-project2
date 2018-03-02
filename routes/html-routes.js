@@ -18,7 +18,7 @@ module.exports = function(app) {
   });
 
   // cms route loads cms.html
-  app.get("/account", function(req, res) {
+  app.get("/account/create", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
