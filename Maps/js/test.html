@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=1.0">
+    <meta charset="utf-8">
+
+	<title>Test</title>
+	
+	<!-- Script Addons -->
+		<!-- jQuery -->
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.js"
+		  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		  crossorigin="anonymous"></script>
+	
+  
+		<!-- Firebase -->
+
+	<!-- CSS -->
+		<!-- Bootstrap Framework -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<!-- Custom Sheet -->
+
+</head>
+
+<body>
+<div class="row">
+		<!-- MAP & GEOCODE -->
+		<div class="col-sm-6 col-md-6" id="mapHeight">
+			<div id="map"></div>
+		</div>
+		<div class="col-sm-6 col-md-6" id="directions">
+
+			<button id="reset">Reset</button>
+			<button id="getdirections">Get Directions</button>
+			<button id="planner">Plan Your Tripr</button>
+			<p>Origin: </p>
+			<div id="from"></div>
+			<p>Destination: </p>
+			<div id="to"></div>
+			<div id="step-by-step"></div>
+			<div id="instructions"></div>
+			<div id="warning"></div>
+		</div>
+	</div>	
+
+	<div>
+			<form class="search-details">
+					<label for="location" class="col-lg-2">Dream Zip Code:</label>
+					<div class="col-lg-10">
+						<input type="text" name="location" class="form-control" id="inputLocation" required>
+					</div>
+			</form>
+
+		<button type="button" class="btn btn-primary" id="search">Submit</button>
+	</div>
+
+	<div id='map'></div>
+
+	</div>
+<!-- This is where the weather will go -->
+	<div id='weather'>
+
+	</div>
+	
+
+<!-- This is the test modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" id="booking">BookIT</button>
+
+<div class="modal fade" id="bookIt" tabindex="-1" role="dialog" aria-labelledby="bookIt-contact" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Start You're Booking Now!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 id="uniqueId"></h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="form-control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="form-control-label">Title:</label>
+            <textarea class="form-control" id="title-text"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="form-control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="app.js"></script>
+</html>
