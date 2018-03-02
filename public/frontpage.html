@@ -11,54 +11,63 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+		<link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet">
+
 		<title>VacationStation</title>
 	</head>
 	<body>
 		<div class="sticky-top">
 			<nav class="navbar navbar-expand-md navbar-light bg-light">
 				<a class="navbar-brand" href="#">
-					<img id="brand-image" alt="VacationStation" src="assets/images/home.png">
+					<img id="brand-image" class="content" data-content="home" alt="VacationStation" src="assets/images/home.png">
 				</a>
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapse-navbar">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="pull-right collapse navbar-collapse" id="collapse-navbar">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item" id="nav-li">
-							<a class="nav-link" href="/post">Post a Property</a>
+						<li class="nav-item">
+							<a class="nav-link content" data-content="search" href="#">Search For a Condo</a>
 						</li>
-						<li class="nav-item" id="nav-li">
+						<li class="nav-item">							<!-- /post -->
+							<a class="nav-link content" data-content="post-prop" href="#">Post a Property</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="#login-modal" data-toggle="modal" class="button">Log In</a>
 						</li>
-						<li class="nav-item" id="nav-li">
-							<a class="nav-link" href="/account/create">Create Account</a>
+						<li class="nav-item">								<!-- /account/create -->
+							<a class="nav-link content" data-content="create-acct" href="#">Create Account</a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col-lg-12">
-						<img src="assets/images/mountain.jpeg" class="img-fluid" id="mountain-image" alt="mountain">
-					</div>
-				</div>
-
-		<!-- need fancy typography -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h1 id="heading1">Vacation/Station</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-8"></div>
-						<div class="col-lg-4">
-							<h4 id="heading2">Your stop for finding the vacation rental of your dreams.</h4>
+				<div id="heading-div">
+					<div class="row">
+						<div class="col-lg-12">
+							<h1 id="heading1">Vacation/Station</h1>
 						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-8"></div>
+							<div class="col-lg-4">
+								<h4 id="heading2">Your stop for finding the vacation rental of your dreams.</h4>
+							</div>
+					</div>
 				</div>
 			</div>
 		</div>
+
+	<!-- main -->
+		<div class="container" id="main">
+			<h3 class="text-center">What's Your Destination?
+				<button type="button" class="btn btn-default content" data-content="search" id="start-button">Start Your Search</button>
+			</h3>
+			<hr>
+		</div>
 	
-		<div class="container" id="search-form">
+	<!-- search -->
+		<div class="container d-none" id="search-form">
 			<h3>Find Your Dream Condo</h3>
 			<hr>
 
@@ -85,6 +94,9 @@
 							<option>3</option>
 							<option>4</option>
 							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
 						</select>
 					</div>
 				</div>
@@ -111,6 +123,146 @@
 
 			<h4>Search Results:</h4>
 				<div id="results-dump"></div>
+		</div>
+
+	<!-- add condo -->
+		<div class="container d-none" id="registration-form">
+			<h3>Add Your Property</h3>
+			<hr>
+				
+				<form>
+					<div class="form-group" id="photo-block">
+						<label for="file-input">
+							<h4>Upload Images:</h4>
+						</label>
+						<input type="file" class="form-control-file" id="file-input">
+						<div id="photo-output-block">
+							<p>Your Uploaded Photos:
+								<div id="photo-dump"></div>
+							</p>
+							<img style="border:1px solid gray;width:100px;"  id="preview" src="/images/cabin.jpg">
+						</div>
+					</div>
+				</form>
+				
+				<div id="info-block">
+					<h4 id="info">Property Information:</h4>
+						<form method="POST" action="/save-details">
+							<div class="form-group row">
+								<label for="name" class="col-lg-2 col-form-label">Property Name:</label>
+								<div class="col-lg-10">
+									<input type="text" name="name" class="form-control" id="name" placeholder="Fancy Schmancy Mountain Condo" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="location" class="col-lg-2 col-form-label">Property Zip Code:</label>
+								<div class="col-lg-10">
+									<input type="text" name="location" class="form-control" id="location" placeholder="12345" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="price" class="col-lg-2 col-form-label">Daily Rate:</label>
+								<div class="col-lg-10">
+									<input type="text" name="price" class="form-control" id="price" placeholder="$000.00" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="pets" class="col-lg-2 col-form-label">Are Pets Allowed?</label>
+									<div class="col-lg-5">
+										<input type="radio" name="pets" id="pets" value="true" checked>Yes
+									</div>
+									<div class="col-lg-5">
+										<input type="radio" name="pets" id="pets" value="false">No
+									</div>
+							</div>
+							<div class="form-group row">
+								<label for="guests" class="col-lg-5 col-form-label">Number Of Guests this Property Can Accommodate:</label>
+								<div class="col-lg-7">
+									<select class="form-control" name="guests" id="guests">
+										<option hidden>Choose a Range</option>
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="description">Property Description:</label>
+								<textarea class="form-control" id="description" rows="4" name="description" required></textarea>
+							</div>
+							<input type="hidden" id="pictureurl" name="pictureurl" value="/images/cabin.jpg">
+							<input type="submit" value="Add Property">
+						</form>
+				</div>
+		</div>
+
+	<!-- view condo -->
+		<div class="container d-none" id="view-condo">
+			<div id="property-view">
+				<h3 id="property-name">Fancy Schmancy Condo</h3>
+				<h5 id="property-location"></h5>
+				<hr>
+				<div id="images-div">
+					<h5>Images Of the Condo</h5>
+						<div id="condo-images-dump"></div>
+				</div>
+				<div id="details-div">
+					<h5>Condo Details</h5>
+					<div class="row">
+						<div class="col-lg-12">
+							<p id="property-description"></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<p>Price:</p>
+						</div>
+						<div class="col-lg-9">
+							<div id="property-price"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<p>Pets Allowed?</p>
+						</div>
+						<div class="col-lg-9">
+							<div id="property-pets"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-3">
+							<p>Max. Number of Guests</p>
+						</div>
+						<div class="col-lg-9">
+							<div id="property-guests"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- sign-up -->
+		<div class="container d-none" id="sign-up">
+			<div id="signup-form">
+				<h3>Create Your Account</h3>
+				<hr>
+				<form method="POST" action="/save-account">
+					<div class="form-group row">
+						<label for="name" class="col-lg-2 col-form-label">Username:</label>
+						<input type="text" name="name" class="form-control" id="name" placeholder="Mountain Hopper" required>
+					</div>
+					<div class="form-group row">
+						<label for="email" class="col-lg-2 col-form-label">Email:</label>
+						<input type="text" name="email" class="form-control" id="email" placeholder="user@email.com" required>
+					</div>
+					<div class="form-group row">
+						<input type="submit" value="Create Account">
+					</div>
+				</form>
+			</div>
+		</div>
 
 		<!--login modal -->
 			<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal">
@@ -119,7 +271,7 @@
 						<div class="modal-header">
 							<h5 class="modal-title">Log In To Vacation/Station</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true" id="modal-cancel">&times</span>
+								<span aria-hidden="true" id="modal-cancel">&times;</span>
 							</button>
 						</div>
 						<div class="modal-body">
@@ -181,11 +333,12 @@
 			  </div>
 			</div>
 		
-
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		
 		<script src="js/condosearch.js" type="text/javascript"></script>
+		<script src="js/format.js" type="text/javascript"></script>
 
 	</body>
 </html>
