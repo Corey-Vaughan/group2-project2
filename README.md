@@ -29,7 +29,7 @@ Current Version 1.0
 <table>
     <tr>
         <td>
-            <img alt="Splash" src="public/assets/images/screenshot1.png">
+            <img alt="Splash" src="public/assets/images/screenshot.png">
         </td>
     </tr>
 </table>
