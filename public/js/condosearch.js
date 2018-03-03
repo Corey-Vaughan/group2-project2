@@ -73,11 +73,11 @@ $(document).ready(function()
           myResult.description,
           "</span>",
           
-          "<button class='bookit btn btn-default' style = 'float:right'>BookIt!</button><br><br>",
+          "<button data-name='" + myResult.name + "' class='bookit btn btn-default' style = 'float:right'>BookIt!</button><br><br>",
           "</li><br>"
         ].join(" ")
         );
-      $newInputRow.find("button.bookit").data("name", myResult.name);
+      //$newInputRow.find("button.bookit").data("name", myResult.name);
       appendResultRow($newInputRow);
     });
   }
