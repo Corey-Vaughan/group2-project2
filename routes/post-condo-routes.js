@@ -52,7 +52,7 @@ module.exports = function(app)
         newPicture.name = object.pictureurl;
         console.log(newPicture);
         db.Picture.create(newPicture);
-        res.sendFile(path.join(__dirname, "../public/register.html"));
+        res.sendFile(path.join(__dirname, "../public/frontpage.html"));
       });
     });
 };
