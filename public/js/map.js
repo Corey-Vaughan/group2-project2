@@ -50,10 +50,10 @@ $.ajax({
 
   //Modal
 function getRecipient(){
-  return $("#button.bookit").attr("data-name")
+  return $("#bookit").attr("data-name")
 }
 
-  $('#button.bookit').click(function (event) {
+  $('#bookit').click(function (event) {
   var button = $(this); // Button that triggered the modal#
   var recipient = getRecipient();
   var emailTitle =  $('"[name="start-date"') + " - " +$('"[name="end-date"');
