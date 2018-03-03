@@ -171,7 +171,8 @@ function getRecipient()
   return $(".bookit").attr("data-name")
 }
 
-  $('.bookit').click(function (event) {
+$(document).on('click', '.bookit', (function (event) 
+{
   var button = $(this); // Button that triggered the modal#
   var recipient = getRecipient();
   var emailTitle =  $('"[name="start-date"') + " - " +$('"[name="end-date"');
@@ -188,5 +189,5 @@ function getRecipient()
 
 
 
-  
+
 });
