@@ -185,7 +185,7 @@ $(document).on('click', '.bookit', (function (event)
   modal.find('#uniqueId').text('New message to ' + recipient)
   modal.find('#title-text').text(emailTitle)
   modal.find('.modal-body input').val(recipient)
-})
+}));
 
 
 
