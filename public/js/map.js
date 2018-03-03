@@ -50,7 +50,7 @@ $.ajax({
 
   //Modal
 function getRecipient(){
-  return $("#bookit").attr("data-name")
+  return $(".bookit").attr("data-name")
 }
 
   $('#bookit').click(function (event) {
