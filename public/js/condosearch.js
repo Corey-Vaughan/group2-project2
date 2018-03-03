@@ -166,15 +166,15 @@ $.ajax({
 });
 
   //Modal
-function getRecipient()
+/*function getRecipient()
 {
   return $(".bookit").attr("data-name")
-}
+}*/
 
 $(document).on('click', '.bookit', (function (event) 
 {
-  var button = $(this); // Button that triggered the modal#
-  var recipient = getRecipient();
+  //var button = $(this); // Button that triggered the modal#
+  var recipient = $(this).attr("data-name");
   console.log(recipient);
    // Extract info from data-* attributes
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
