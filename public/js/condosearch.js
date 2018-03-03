@@ -175,7 +175,7 @@ $(document).on('click', '.bookit', (function (event)
 {
   var button = $(this); // Button that triggered the modal#
   var recipient = getRecipient();
-  var emailTitle =  $('"[name="start-date"') + " - " +$('"[name="end-date"');
+  var emailTitle =  $('"[name="start-date]"') + " - " +$('"[name="end-date]"');
   console.log(emailTitle);
   console.log(recipient);
    // Extract info from data-* attributes
